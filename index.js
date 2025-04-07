@@ -31,7 +31,7 @@ app.use('/',express.static(path.join(__dirname, 'public')))
 
 
 
- 
+  
 // Routers
 app.use('/api/subject',require('./routers/subjectRouter'))
 app.use('/api/user',require('./routers/user'))
