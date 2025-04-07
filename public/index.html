@@ -142,19 +142,7 @@
             background: #1dbfff;
         }
         
-        .close-btn {
-            background: #1dbfff;
-            color: #0a192f;
-            border: none;
-            padding: 12px 30px;
-            font-size: 1.1rem;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-weight: bold;
-            width: 100%;
-     
-        }
+
         
         .social-links {
             margin-top: 40px;
@@ -223,7 +211,6 @@
         
         <!-- فورم الاشتراك -->
         <div class="subscribe-form" id="subscribeForm">
-            <button class="close-btn" id="closeBtn">&times;</button>
             <h3 style="margin-bottom: 20px;">سجل بريدك لتحصل على التحديثات أولاً</h3>
             <form id="emailForm">
                 <input type="email" placeholder="بريدك الإلكتروني" required>
@@ -291,17 +278,13 @@
         // فورم الاشتراك
         const subscribeBtn = document.getElementById('subscribeBtn');
         const subscribeForm = document.getElementById('subscribeForm');
-        const closeBtn = document.getElementById('closeBtn');
         const emailForm = document.getElementById('emailForm');
         
         subscribeBtn.addEventListener('click', function() {
             subscribeForm.style.display = 'block';
         });
         
-        closeBtn.addEventListener('click', function() {
-            subscribeForm.style.display = 'none';
-        });
-        
+
         emailForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             const email = this.querySelector('input').value;
