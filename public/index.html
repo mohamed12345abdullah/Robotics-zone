@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مشروع ثوري قادم | Assiut Robotics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS */
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        body {
+            background: #0a192f;
+            color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* الخلفية الخاصة بك */
+        .hero-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-image: url('./RoboticsLap.jpg'); /* استبدل برابط خلفيتك */
+            background-size: cover;
+            background-position: center;
+            /* opacity: 1; */
+            z-index: 0;
+        }
+        
+        .overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 25, 47, 0.8);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+            max-width: 800px;
+            animation: fadeIn 1.5s ease-out;
+        }
+        
+        .logo {
+            width: 150px;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .mystery-text {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 20px 0;
+            min-height: 80px;
+            color: #1dbfff;
+        }
+        
+        .typed-text {
+            border-right: 2px solid #1dbfff;
+            animation: blink 0.7s infinite;
+        }
+        
+        .cta-button {
+            background: #1dbfff;
+            color: #0a192f;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: all 0.3s;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(46, 132, 231, 0.747);
+        }
+        
+        .cta-button:hover {
+            background: #1dbfff;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(17, 177, 240, 0.6);
+        }
+        
+        /* ستايل فورم الاشتراك */
+        .subscribe-form {
+            display: none;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 500px;
+            margin: 20px auto 0;
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        .subscribe-form input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.9);
+        }
+        
+        .subscribe-form button {
+            background: #1dbfff;
+            color: #0a192f;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+            width: 100%;
+        }
+        
+        .subscribe-form button:hover {
+            background: #1dbfff;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .social-links {
+            margin-top: 40px;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #0b69f5;
+        }
+        
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .mystery-text { font-size: 1.4rem; }
+            .subscribe-form {
+                padding: 20px;
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- الخلفية الخاصة بك -->
+    <div class="hero-bg"></div>
+    <div class="overlay"></div>
+    
+    <div class="hero-content">
+        <!-- شعار الفريق -->
+        <img src="./default.png" alt="Assiut Robotics Logo" class="logo">
+        
+        <!-- العنوان الرئيسي الغامض -->
+        <h1>new project from <span style="color: #0b5df5;">Assiut Robotics</span></h1>
+        
+        <!-- نص مشوق مع أنيميشن -->
+        <div class="mystery-text">
+            <span id="typed"></span>
+            <span class="typed-text"></span>
+        </div>
+        
+        <!-- زر الاشتراك -->
+        <button class="cta-button" id="subscribeBtn">
+            <i class="fas fa-bell"></i> اشترك ليصلك الخبر أولاً
+        </button>
+        
+        <!-- فورم الاشتراك -->
+        <div class="subscribe-form" id="subscribeForm">
+            <button class="close-btn" id="closeBtn">&times;</button>
+            <h3 style="margin-bottom: 20px;">سجل بريدك لتحصل على التحديثات أولاً</h3>
+            <form id="emailForm">
+                <input type="email" placeholder="بريدك الإلكتروني" required>
+                <button type="submit">إرسال</button>
+            </form>
+        </div>
+        
+        <!-- روابط التواصل -->
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-telegram"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // تأثير الكتابة الآلية
+        const typedTextSpan = document.querySelector(".typed-text");
+        const textArray = [
+            // translate to english
+            " Assiut Robotics ",    
+            " new project ", 
+            " something amazing ",
+            " أسيوط روبوتيكس ", 
+            "We are back!",
+            "Get ready for something amazing!",
+            "It's going to change your learning experience!",
+            " أسيوط روبوتيكس ",
+            "We are back!",
+            "Get ready for something amazing!",
+            "It's going to change your learning experience!",
+            "be the first to know!",
+            "something amazing is coming!",
+            "it will change your learning experience!"
+        ];
+        const typingDelay = 70;
+        const erasingDelay = 40;
+        const newTextDelay = 1500;
+        let textArrayIndex = 0;
+        let charIndex = 0;
+        
+        function type() {
+            if (charIndex < textArray[textArrayIndex].length) {
+                document.getElementById("typed").textContent += textArray[textArrayIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(type, typingDelay);
+            } else {
+                setTimeout(erase, newTextDelay);
+            }
+        }
+        
+        function erase() {
+            if (charIndex > 0) {
+                document.getElementById("typed").textContent = textArray[textArrayIndex].substring(0, charIndex-1);
+                charIndex--;
+                setTimeout(erase, erasingDelay);
+            } else {
+                textArrayIndex++;
+                if(textArrayIndex >= textArray.length) textArrayIndex = 0;
+                setTimeout(type, typingDelay + 500);
+            }
+        }
+        
+        // فورم الاشتراك
+        const subscribeBtn = document.getElementById('subscribeBtn');
+        const subscribeForm = document.getElementById('subscribeForm');
+        const closeBtn = document.getElementById('closeBtn');
+        const emailForm = document.getElementById('emailForm');
+        
+        subscribeBtn.addEventListener('click', function() {
+            subscribeForm.style.display = 'block';
+        });
+        
+        closeBtn.addEventListener('click', function() {
+            subscribeForm.style.display = 'none';
+        });
+        
+        emailForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input').value;
+            
+            // هنا يمكنك إضافة كود إرسال البيانات إلى الخادم
+            await sendEmailToDb(email)
+            this.querySelector('input').value = '';
+            subscribeForm.style.display = 'none';
+        });
+        
+        // بدء الأنيميشن بعد تحميل الصفحة
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(type, 1000);
+        });
+
+
+        const sendEmailToDb=async (email)=>{
+            const res= await fetch('../api/user/subscripe',
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email })
+                }
+            );
+            if(!res.ok) {
+                alert('Failed to subscribe try again');
+                return;
+            }
+            const response = await res.json();
+    
+            alert(`Thank you for subscribing!`);
+            console.log(response);
+
+        }
+    </script>
+</body>
+</html>
